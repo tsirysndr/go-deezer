@@ -19,13 +19,13 @@
 
 go-deezer is a Go client library for accessing the [Deezer API](https://developers.deezer.com/api)
 
-## Install
+## 🚚 Install
 
 ```sh
 go get github.com/tsirysndr/go-deezer
 ```
 
-## Usage
+## 🚀 Usage
 
 Import the package into your project.
 
