@@ -5,6 +5,7 @@
   </a>
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tsirysndr/go-deezer">
   <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/tsirysndr/go-deezer">
+  <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/tsirysndr/go-deezer">
   <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/tsirysndr/go-deezer">
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/tsirysndr/go-deezer">
   <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/tsirysndr/go-deezer">
