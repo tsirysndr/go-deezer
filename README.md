@@ -37,6 +37,9 @@ Construct a new Deezer client, then use the various services on the client to ac
 
 ```Go
 client := deezer.NewClient()
+res, _ := client.Artist.Get("27")
+artist, _ := json.Marshal(res)
+fmt.Println(string(artist))
 ```
 
 ## Author
