@@ -12,5 +12,4 @@ func main() {
 	res, _ := client.Artist.Get("27")
 	artist, _ := json.Marshal(res)
 	fmt.Println(string(artist))
-
 }
