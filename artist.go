@@ -29,6 +29,12 @@ type Top struct {
 	Next  string  `json:"next"`
 }
 
+type Albums struct {
+	Data  []Album `json:"data"`
+	Total int     `json:"total"`
+	Next  string  `json:"next"`
+}
+
 func (s *ArtistService) Get(ID string) (*Artist, error) {
 	var err error
 	artist := new(Artist)
@@ -42,4 +48,12 @@ func (s *ArtistService) GetTopFive(ID string) (*Top, error) {
 	path := fmt.Sprintf("artist/%s/top", ID)
 	s.client.base.Get(path).Receive(top, err)
 	return top, err
+}
+
+func (s *ArtistService) GetAlbums(ID string) (*Albums, error) {
+	var err error
+	albums := new(Albums)
+	path := fmt.Sprintf("artist/%s/albums", ID)
+	s.client.base.Get(path).Receive(albums, err)
+	return albums, err
 }
