@@ -35,6 +35,12 @@ type Albums struct {
 	Next  string  `json:"next"`
 }
 
+type Playlists struct {
+	Data  []Playlist `json:"data"`
+	Total int        `json:"total"`
+	Next  string     `json:"next"`
+}
+
 func (s *ArtistService) Get(ID string) (*Artist, error) {
 	var err error
 	artist := new(Artist)
@@ -56,4 +62,12 @@ func (s *ArtistService) GetAlbums(ID string) (*Albums, error) {
 	path := fmt.Sprintf("artist/%s/albums", ID)
 	s.client.base.Get(path).Receive(albums, err)
 	return albums, err
+}
+
+func (s *ArtistService) GetPlaylists(ID string) (*Playlists, error) {
+	var err error
+	playlists := new(Playlists)
+	path := fmt.Sprintf("artist/%s/playlists", ID)
+	s.client.base.Get(path).Receive(playlists, err)
+	return playlists, err
 }

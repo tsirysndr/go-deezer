@@ -9,7 +9,7 @@ import (
 
 func main() {
 	client := deezer.NewClient()
-	res, _ := client.Artist.GetAlbums("27")
-	top, _ := json.Marshal(res)
-	fmt.Println(string(top))
+	res, _ := client.Artist.GetPlaylists("27")
+	playlists, _ := json.Marshal(res)
+	fmt.Println(string(playlists))
 }
