@@ -53,6 +53,12 @@ type Related struct {
 	Next  string   `json:"next"`
 }
 
+type Radio struct {
+	Data  []Track `json:"data"`
+	Total int     `json:"total"`
+	Next  string  `json:"next"`
+}
+
 func (s *ArtistService) Get(ID string) (*Artist, error) {
 	var err error
 	artist := new(Artist)
@@ -98,4 +104,12 @@ func (s *ArtistService) GetRelated(ID string) (*Related, error) {
 	path := fmt.Sprintf("artist/%s/related", ID)
 	s.client.base.Get(path).Receive(related, err)
 	return related, err
+}
+
+func (s *ArtistService) GetRadio(ID string) (*Radio, error) {
+	var err error
+	radio := new(Radio)
+	path := fmt.Sprintf("artist/%s/radio", ID)
+	s.client.base.Get(path).Receive(radio, err)
+	return radio, err
 }
