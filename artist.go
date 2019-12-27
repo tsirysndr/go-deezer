@@ -47,6 +47,12 @@ type Fans struct {
 	Next  string `json:"next"`
 }
 
+type Related struct {
+	Data  []Artist `json:"data"`
+	Total int      `json:"total"`
+	Next  string   `json:"next"`
+}
+
 func (s *ArtistService) Get(ID string) (*Artist, error) {
 	var err error
 	artist := new(Artist)
@@ -84,4 +90,12 @@ func (s *ArtistService) GetFans(ID string) (*Fans, error) {
 	path := fmt.Sprintf("artist/%s/fans", ID)
 	s.client.base.Get(path).Receive(fans, err)
 	return fans, err
+}
+
+func (s *ArtistService) GetRelated(ID string) (*Related, error) {
+	var err error
+	related := new(Related)
+	path := fmt.Sprintf("artist/%s/related", ID)
+	s.client.base.Get(path).Receive(related, err)
+	return related, err
 }
