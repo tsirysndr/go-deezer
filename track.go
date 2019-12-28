@@ -36,3 +36,10 @@ type Contributor struct {
 	Type          string `json:"type"`
 	Role          string `json:"role"`
 }
+
+func (s *TrackService) Get(ID string) (*Track, error) {
+	var err error
+	track := new(Track)
+	s.client.base.Path("track/").Get(ID).Receive(track, err)
+	return track, err
+}
