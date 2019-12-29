@@ -46,6 +46,12 @@ type Genre struct {
 	Type    string `json:"type"`
 }
 
+type Tracks struct {
+	Data  []Track `json:"data"`
+	Total int     `json:"total"`
+	Next  string  `json:"next"`
+}
+
 func (s *AlbumService) Get(ID string) (*Album, error) {
 	var err error
 	album := new(Album)
@@ -67,4 +73,12 @@ func (s *AlbumService) GetFans(ID string) (*Fans, error) {
 	path := fmt.Sprintf("album/%s/fans", ID)
 	s.client.base.Get(path).Receive(fans, err)
 	return fans, err
+}
+
+func (s *AlbumService) GetTracks(ID string) (*Tracks, error) {
+	var err error
+	tracks := new(Tracks)
+	path := fmt.Sprintf("album/%s/tracks", ID)
+	s.client.base.Get(path).Receive(tracks, err)
+	return tracks, err
 }
