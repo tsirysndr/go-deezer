@@ -8,6 +8,7 @@ type Track struct {
 	Title                 string        `json:"title"`
 	TitleShort            string        `json:"title_short"`
 	TitleVersion          string        `json:"title_version"`
+	ISRC                  string        `json:"isrc"`
 	Link                  string        `json:"link"`
 	Duration              int           `json:"duration"`
 	Rank                  int           `json:"rank"`
