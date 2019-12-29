@@ -5,51 +5,51 @@ import "fmt"
 type AlbumService service
 
 type Album struct {
-	ID          int    `json:"id"`
-	Title       string `json:"title"`
-	UPC         string `json:"upc"`
-	Link        string `json:"link"`
-	Share       string `json:"share"`
-	Cover       string `json:"cover"`
-	CoverSmall  string `json:"cover_small"`
-	CoverMedium string `json:"cover_medium"`
-	CoverBig    string `json:"cover_big"`
-	CoverXL     string `json:"cover_xl"`
-	GenreID     int    `json:"genre_id"`
+	ID          int    `json:"id,omitempty"`
+	Title       string `json:"title,omitempty"`
+	UPC         string `json:"upc,omitempty"`
+	Link        string `json:"link,omitempty"`
+	Share       string `json:"share,omitempty"`
+	Cover       string `json:"cover,omitempty"`
+	CoverSmall  string `json:"cover_small,omitempty"`
+	CoverMedium string `json:"cover_medium,omitempty"`
+	CoverBig    string `json:"cover_big,omitempty"`
+	CoverXL     string `json:"cover_xl,omitempty"`
+	GenreID     int    `json:"genre_id,omitempty"`
 	Genres      *struct {
-		Data []Genre `json:"data"`
-	} `json:"genres"`
-	Label                 string   `json:"label"`
-	NbTracks              int      `json:"nb_tracks"`
-	Duration              int      `json:"duration"`
-	Fans                  int      `json:"fans"`
-	Rating                int      `json:"rating"`
-	ReleaseDate           string   `json:"release_date"`
-	RecordType            string   `json:"record_type"`
-	Available             bool     `json:"available"`
-	TrackList             string   `json:"tracklist"`
-	ExplicitLyrics        bool     `json:"explicit_lyrics"`
-	ExplicitContentLyrics int      `json:"explicit_content_lyrics"`
-	ExplicitContentCover  int      `json:"explicit_content_cover"`
-	Contributors          []Artist `json:"contributors"`
-	Artist                *Artist  `json:"artist"`
-	Type                  string   `json:"type"`
+		Data []Genre `json:"data,omitempty"`
+	} `json:"genres,omitempty"`
+	Label                 string   `json:"label,omitempty"`
+	NbTracks              int      `json:"nb_tracks,omitempty"`
+	Duration              int      `json:"duration,omitempty"`
+	Fans                  int      `json:"fans,omitempty"`
+	Rating                int      `json:"rating,omitempty"`
+	ReleaseDate           string   `json:"release_date,omitempty"`
+	RecordType            string   `json:"record_type,omitempty"`
+	Available             bool     `json:"available,omitempty"`
+	TrackList             string   `json:"tracklist,omitempty"`
+	ExplicitLyrics        bool     `json:"explicit_lyrics,omitempty"`
+	ExplicitContentLyrics int      `json:"explicit_content_lyrics,omitempty"`
+	ExplicitContentCover  int      `json:"explicit_content_cover,omitempty"`
+	Contributors          []Artist `json:"contributors,omitempty"`
+	Artist                *Artist  `json:"artist,omitempty"`
+	Type                  string   `json:"type,omitempty"`
 	Tracks                *struct {
-		Data []Track `json:"data"`
-	} `json:"tracks"`
+		Data []Track `json:"data,omitempty"`
+	} `json:"tracks,omitempty"`
 }
 
 type Genre struct {
-	ID      int    `json:"id"`
-	Name    string `json:"name"`
-	Picture string `json:"picture"`
-	Type    string `json:"type"`
+	ID      int    `json:"id,omitempty"`
+	Name    string `json:"name,omitempty"`
+	Picture string `json:"picture,omitempty"`
+	Type    string `json:"type,omitempty"`
 }
 
 type Tracks struct {
-	Data  []Track `json:"data"`
-	Total int     `json:"total"`
-	Next  string  `json:"next"`
+	Data  []Track `json:"data,omitempty"`
+	Total int     `json:"total,omitempty"`
+	Next  string  `json:"next,omitempty"`
 }
 
 func (s *AlbumService) Get(ID string) (*Album, error) {

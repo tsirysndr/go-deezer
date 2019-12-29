@@ -7,62 +7,62 @@ import (
 type ArtistService service
 
 type Artist struct {
-	ID            int    `json:"id"`
-	Name          string `json:"name"`
-	Link          string `json:"link"`
-	Share         string `json:"share"`
-	Picture       string `json:"picture"`
-	PictureSmall  string `json:"picture_small"`
-	PictureMedium string `json:"picture_medium"`
-	PictureBig    string `json:"picture_big"`
-	PictureXl     string `json:"picture_xl"`
-	NbAlbum       int    `json:"nb_album"`
-	NbFan         int    `json:"nb_fan"`
-	Radio         bool   `json:"radio"`
-	TrackList     string `json:"tracklist"`
-	Type          string `json:"type"`
+	ID            int    `json:"id,omitempty"`
+	Name          string `json:"name,omitempty"`
+	Link          string `json:"link,omitempty"`
+	Share         string `json:"share,omitempty"`
+	Picture       string `json:"picture,omitempty"`
+	PictureSmall  string `json:"picture_small,omitempty"`
+	PictureMedium string `json:"picture_medium,omitempty"`
+	PictureBig    string `json:"picture_big,omitempty"`
+	PictureXl     string `json:"picture_xl,omitempty"`
+	NbAlbum       int    `json:"nb_album,omitempty"`
+	NbFan         int    `json:"nb_fan,omitempty"`
+	Radio         bool   `json:"radio,omitempty"`
+	TrackList     string `json:"tracklist,omitempty"`
+	Type          string `json:"type,omitempty"`
 }
 
 type Top struct {
-	Data  []Track `json:"data"`
-	Total int     `json:"total"`
-	Next  string  `json:"next"`
+	Data  []Track `json:"data,omitempty"`
+	Total int     `json:"total,omitempty"`
+	Next  string  `json:"next,omitempty"`
 }
 
 type Albums struct {
-	Data  []Album `json:"data"`
-	Total int     `json:"total"`
-	Next  string  `json:"next"`
+	Data  []Album `json:"data,omitempty"`
+	Total int     `json:"total,omitempty"`
+	Next  string  `json:"next,omitempty"`
 }
 
 type Playlists struct {
-	Data  []Playlist `json:"data"`
-	Total int        `json:"total"`
-	Next  string     `json:"next"`
+	Data  []Playlist `json:"data,omitempty"`
+	Total int        `json:"total,omitempty"`
+	Next  string     `json:"next,omitempty"`
 }
 
 type Fans struct {
-	Data  []User `json:"data"`
-	Total int    `json:"total"`
-	Next  string `json:"next"`
+	Data  []User `json:"data,omitempty"`
+	Total int    `json:"total,omitempty"`
+	Next  string `json:"next,omitempty"`
 }
 
 type Related struct {
-	Data  []Artist `json:"data"`
-	Total int      `json:"total"`
-	Next  string   `json:"next"`
+	Data  []Artist `json:"data,omitempty"`
+	Total int      `json:"total,omitempty"`
+	Next  string   `json:"next,omitempty"`
 }
 
 type Radio struct {
-	Data  []Track `json:"data"`
-	Total int     `json:"total"`
-	Next  string  `json:"next"`
+	Data  []Track `json:"data,omitempty"`
+	Total int     `json:"total,omitempty"`
+	Next  string  `json:"next,omitempty"`
 }
 
 type Comments struct {
-	Data  []Comment `json:"data"`
-	Total int       `json:"total"`
-	Next  string    `json:"next"`
+	Data  []Comment `json:"data,omitempty"`
+	Total int       `json:"total,omitempty"`
+	Next  string    `json:"next,omitempty"`
 }
 
 func (s *ArtistService) Get(ID string) (*Artist, error) {
