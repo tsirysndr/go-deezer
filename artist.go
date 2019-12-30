@@ -41,6 +41,12 @@ type Playlists struct {
 	Next  string     `json:"next,omitempty"`
 }
 
+type Artists struct {
+	Data  []Artist `json:"data,omitempty"`
+	Total int      `json:"total,omitempty"`
+	Next  string   `json:"next,omitempty"`
+}
+
 type Fans struct {
 	Data  []User `json:"data,omitempty"`
 	Total int    `json:"total,omitempty"`
