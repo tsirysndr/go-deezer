@@ -18,3 +18,10 @@ type Playlist struct {
 	User          *User  `json:"user,omitempty"`
 	Type          string `json:"type,omitempty"`
 }
+
+func (s *PlaylistService) Get(ID string) (*Playlist, error) {
+	var err error
+	playlist := new(Playlist)
+	s.client.base.Path("playlist/").Get(ID).Receive(playlist, err)
+	return playlist, err
+}
