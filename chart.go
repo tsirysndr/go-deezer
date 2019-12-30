@@ -12,3 +12,10 @@ func (s *ChartService) GetTracks() (*Tracks, error) {
 	s.client.base.Get("chart/0/tracks").Receive(tracks, err)
 	return tracks, err
 }
+
+func (s *ChartService) GetAlbums() (*Albums, error) {
+	var err error
+	albums := new(Albums)
+	s.client.base.Get("chart/0/albums").Receive(albums, err)
+	return albums, err
+}
