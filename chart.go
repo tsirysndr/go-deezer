@@ -19,3 +19,10 @@ func (s *ChartService) GetAlbums() (*Albums, error) {
 	s.client.base.Get("chart/0/albums").Receive(albums, err)
 	return albums, err
 }
+
+func (s *ChartService) GetArtists() (*Artists, error) {
+	var err error
+	artists := new(Artists)
+	s.client.base.Get("chart/0/artists").Receive(artists, err)
+	return artists, err
+}
