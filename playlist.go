@@ -43,3 +43,11 @@ func (s *PlaylistService) GetFans(ID string) (*Fans, error) {
 	s.client.base.Get(path).Receive(fans, err)
 	return fans, err
 }
+
+func (s *PlaylistService) GetTracks(ID string) (*Tracks, error) {
+	var err error
+	tracks := new(Tracks)
+	path := fmt.Sprintf("playlist/%s/tracks", ID)
+	s.client.base.Get(path).Receive(tracks, err)
+	return tracks, err
+}
