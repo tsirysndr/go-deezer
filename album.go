@@ -39,13 +39,6 @@ type Album struct {
 	} `json:"tracks,omitempty"`
 }
 
-type Genre struct {
-	ID      int    `json:"id,omitempty"`
-	Name    string `json:"name,omitempty"`
-	Picture string `json:"picture,omitempty"`
-	Type    string `json:"type,omitempty"`
-}
-
 type Tracks struct {
 	Data  []Track `json:"data,omitempty"`
 	Total int     `json:"total,omitempty"`
