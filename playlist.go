@@ -1,5 +1,7 @@
 package deezer
 
+import "fmt"
+
 type PlaylistService service
 
 type Playlist struct {
@@ -24,4 +26,12 @@ func (s *PlaylistService) Get(ID string) (*Playlist, error) {
 	playlist := new(Playlist)
 	s.client.base.Path("playlist/").Get(ID).Receive(playlist, err)
 	return playlist, err
+}
+
+func (s *PlaylistService) GetComments(ID string) (*Comments, error) {
+	var err error
+	comments := new(Comments)
+	path := fmt.Sprintf("playlist/%s/comments", ID)
+	s.client.base.Get(path).Receive(comments, err)
+	return comments, err
 }
