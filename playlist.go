@@ -35,3 +35,11 @@ func (s *PlaylistService) GetComments(ID string) (*Comments, error) {
 	s.client.base.Get(path).Receive(comments, err)
 	return comments, err
 }
+
+func (s *PlaylistService) GetFans(ID string) (*Fans, error) {
+	var err error
+	fans := new(Fans)
+	path := fmt.Sprintf("playlist/%s/fans", ID)
+	s.client.base.Get(path).Receive(fans, err)
+	return fans, err
+}
