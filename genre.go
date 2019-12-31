@@ -21,6 +21,14 @@ type Genres struct {
 	Next  string  `json:"next,omitempty"`
 }
 
+func (s *GenreService) Get(ID int) (*Genre, error) {
+	var err error
+	genre := new(Genre)
+	path := fmt.Sprintf("genre/%d", ID)
+	s.client.base.Get(path).Receive(genre, err)
+	return genre, err
+}
+
 func (s *GenreService) List() (*Genres, error) {
 	var err error
 	genres := new(Genres)
