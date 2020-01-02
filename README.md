@@ -68,8 +68,6 @@ Currently the following services are supported:
 - [ ] Add a comment to the artist
 - [ ] Add a comment to the playlist
 - [ ] Return a list of albums selected every week by the Deezer Team
-- [ ] This method returns four lists : Top track, Top album, Top artist and Top playlist
-- [ ] This method returns the new releases per genre for the current country
 - [x] Returns all artists for a genre
 - [x] Get a Genre
 - [ ] Returns all radios for a genre
