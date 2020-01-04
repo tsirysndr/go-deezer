@@ -5,10 +5,18 @@
   </a>
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tsirysndr/go-deezer">
   <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/tsirysndr/go-deezer">
-  <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/tsirysndr/go-deezer">
-  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/tsirysndr/go-deezer">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/tsirysndr/go-deezer">
-  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/tsirysndr/go-deezer">
+  <a href="https://github.com/tsirysndr/go-deezer/issues?q=is%3Apr+is%3Aclosed">
+    <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/tsirysndr/go-deezer">
+  </a>
+  <a href="https://github.com/tsirysndr/go-deezer/pulls">
+    <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/tsirysndr/go-deezer">
+  </a>
+  <a href="https://github.com/tsirysndr/go-deezer/issues">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/tsirysndr/go-deezer">
+  </a>
+  <a href="https://github.com/tsirysndr/go-deezer/graphs/contributors">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/tsirysndr/go-deezer">
+  </a>
   <a href="https://github.com/tsirysndr/go-deezer/blob/master/LICENSE">
     <img alt="License: BSD" src="https://img.shields.io/badge/license-BSD-green.svg" target="_blank" />
   </a>
