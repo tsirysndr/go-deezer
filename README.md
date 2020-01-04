@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to go-deezer 👋 *** Work In Progress ***</h1>
 <p align="center">
-  <a href="https://github.com/tsirysndr/go-spotify/commits/master">
+  <a href="https://github.com/tsirysndr/go-deezer/commits/master">
     <img src="https://img.shields.io/github/last-commit/tsirysndr/go-deezer" target="_blank" />
   </a>
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/tsirysndr/go-deezer">
