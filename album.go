@@ -48,7 +48,7 @@ type Tracks struct {
 func (s *AlbumService) Get(ID string) (*Album, error) {
 	var err error
 	album := new(Album)
-	s.client.base.Path("album/").Get(ID).Receive(album, err)
+	s.client.base.Path("album/").Get(ID).Receive(album, &err)
 	return album, err
 }
 
@@ -56,7 +56,7 @@ func (s *AlbumService) GetComments(ID string) (*Comments, error) {
 	var err error
 	comments := new(Comments)
 	path := fmt.Sprintf("album/%s/comments", ID)
-	s.client.base.Get(path).Receive(comments, err)
+	s.client.base.Get(path).Receive(comments, &err)
 	return comments, err
 }
 
@@ -64,7 +64,7 @@ func (s *AlbumService) GetFans(ID string) (*Fans, error) {
 	var err error
 	fans := new(Fans)
 	path := fmt.Sprintf("album/%s/fans", ID)
-	s.client.base.Get(path).Receive(fans, err)
+	s.client.base.Get(path).Receive(fans, &err)
 	return fans, err
 }
 
@@ -72,6 +72,6 @@ func (s *AlbumService) GetTracks(ID string) (*Tracks, error) {
 	var err error
 	tracks := new(Tracks)
 	path := fmt.Sprintf("album/%s/tracks", ID)
-	s.client.base.Get(path).Receive(tracks, err)
+	s.client.base.Get(path).Receive(tracks, &err)
 	return tracks, err
 }

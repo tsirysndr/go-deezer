@@ -41,6 +41,6 @@ type Contributor struct {
 func (s *TrackService) Get(ID string) (*Track, error) {
 	var err error
 	track := new(Track)
-	s.client.base.Path("track/").Get(ID).Receive(track, err)
+	s.client.base.Path("track/").Get(ID).Receive(track, &err)
 	return track, err
 }
