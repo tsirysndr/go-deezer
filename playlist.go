@@ -24,7 +24,7 @@ type Playlist struct {
 func (s *PlaylistService) Get(ID string) (*Playlist, error) {
 	var err error
 	playlist := new(Playlist)
-	s.client.base.Path("playlist/").Get(ID).Receive(playlist, err)
+	s.client.base.Path("playlist/").Get(ID).Receive(playlist, &err)
 	return playlist, err
 }
 
@@ -32,7 +32,7 @@ func (s *PlaylistService) GetComments(ID string) (*Comments, error) {
 	var err error
 	comments := new(Comments)
 	path := fmt.Sprintf("playlist/%s/comments", ID)
-	s.client.base.Get(path).Receive(comments, err)
+	s.client.base.Get(path).Receive(comments, &err)
 	return comments, err
 }
 
@@ -40,7 +40,7 @@ func (s *PlaylistService) GetFans(ID string) (*Fans, error) {
 	var err error
 	fans := new(Fans)
 	path := fmt.Sprintf("playlist/%s/fans", ID)
-	s.client.base.Get(path).Receive(fans, err)
+	s.client.base.Get(path).Receive(fans, &err)
 	return fans, err
 }
 
@@ -48,6 +48,6 @@ func (s *PlaylistService) GetTracks(ID string) (*Tracks, error) {
 	var err error
 	tracks := new(Tracks)
 	path := fmt.Sprintf("playlist/%s/tracks", ID)
-	s.client.base.Get(path).Receive(tracks, err)
+	s.client.base.Get(path).Receive(tracks, &err)
 	return tracks, err
 }
